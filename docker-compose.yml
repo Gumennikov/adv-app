@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  mysql:
+    image: library/mysql:5.7
+    volumes:
+      - .storage/docker/mysql:var/lib/mysql
+    environment:
+      - "MYSQL_ROOT_PASSWORD=secret"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD="
+      - "MYSQL_DATABASE=adv-app"
+    ports:
+    - "33061:3306"
